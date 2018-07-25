@@ -15,9 +15,8 @@ defmodule Worker do
   end
 
   defp loop(segments, segments_count) do
-    event_len = :rand.uniform(segments_count + 1) - 1
-    event = Enum.take(segments, event_len)
-    Events.execute(event, 0)
+    # this way all handlers will be executed - worst case scenario
+    Events.execute(segments, 0)
     loop(segments, segments_count)
   end
 end
