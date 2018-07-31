@@ -26,7 +26,8 @@ defmodule Mix.Tasks.Bench.ListHandlersForEvent do
   @impls %{
     "Agent" => Events.Impl.Agent,
     "ETS" => Events.Impl.Ets,
-    "ETS with cache" => Events.Impl.EtsCached
+    "ETS with cache" => Events.Impl.EtsCached,
+    "ETS Tree" => Events.Impl.EtsTree
   }
 
   def run(argv) do
